@@ -1,0 +1,199 @@
+{
+    "minimax": {
+        "boxType": "maxi3",
+        "coreVersion": "3",
+        "previousStatsDate": "2023-06-24T01:10:15",
+        "currentStatsDate": "2023-06-25T01:10:24",
+        "hardware": {
+            "board": [
+                {
+                    "name": "HM",
+                    "id": "0053002D3036510F32393739"
+                },
+                {
+                    "name": "C",
+                    "id": "undefined"
+                },
+                {
+                    "name": "T",
+                    "id": "353500720137126"
+                },
+                {
+                    "name": "PW-BE",
+                    "id": "002B45E0"
+                },
+                {
+                    "name": "HE-GUI",
+                    "id": "002B45E0"
+                },
+                {
+                    "name": "HE-X01",
+                    "id": "00BE193B"
+                },
+                {
+                    "name": "PW-SE",
+                    "id": "00202BC1"
+                },
+                {
+                    "name": "PW-SE2",
+                    "id": "00202BC1"
+                },
+                {
+                    "name": "HE-C",
+                    "id": "002B8333"
+                },
+                {
+                    "id": "undefined",
+                    "name": "Charger"
+                }
+            ],
+            "sd": [
+                {
+                    "loc": "mini",
+                    "label": "",
+                    "size": 30432,
+                    "free": {
+                        "space": 30432,
+                        "photos": 62325
+                    },
+                    "photosWritten": 0,
+                    "status": "Ok",
+                    "writeProtected": false,
+                    "corrupted": false
+                },
+                {
+                    "loc": "dslr",
+                    "label": "SD_8429",
+                    "size": 244144,
+                    "free": {
+                        "space": 181864,
+                        "photos": 45465
+                    },
+                    "photosWritten": 19740,
+                    "status": "Ok",
+                    "writeProtected": false,
+                    "corrupted": false
+                }
+            ],
+            "battery": {
+                "id": 18187,
+                "voltage": 12688,
+                "soc": 99,
+                "rc": 1552,
+                "health": 95
+            },
+            "dslr": {
+                "model": "D3300",
+                "label": "HE-2908",
+                "lensLabel": "HCP-1779",
+                "camLabel": "C-1140",
+                "hardwareVersion": "3000001",
+                "fixedLens": true,
+                "fixedAperture": "F8",
+                "unblockMirrorTries": 0
+            },
+            "modem": {
+                "model": "lara-r6001d",
+                "manufacturer": "u-blox",
+                "firmwareVersion": "00.13"
+            }
+        },
+        "software": {
+            "release": [
+                {
+                    "name": "bootloader",
+                    "version": "3.0.4-0"
+                },
+                {
+                    "name": "firmware",
+                    "version": "3.0.11-dev7",
+                    "buildDate": "20230406144055"
+                }
+            ]
+        },
+        "statistics": {
+            "software": [
+                {
+                    "firmware": {
+                        "dailyBoot": 436,
+                        "hardFault": 0,
+                        "smsReceived": 0,
+                        "mqttMsgReceived": 0,
+                        "modemReset": 0,
+                        "watchdogReset": 0,
+                        "installBoot": 0,
+                        "logError": 894,
+                        "logWarning": 2203
+                    }
+                }
+            ],
+            "network": {
+                "operator": "F-Bouygues Telecom Bouygues Telecom",
+                "techno": "4G",
+                "strength": 86,
+                "quality": 35,
+                "simId": "N/A",
+                "noDataMode": false,
+                "airplaneMode": false
+            },
+            "wakeSrc": {
+                "resetSoft": 0,
+                "resetBtn": 0,
+                "wakeUpBtn": 0,
+                "fwrUpdate": 0,
+                "powerOn": 0,
+                "rtc": 436,
+                "modem": 0,
+                "hyst": 0,
+                "watchdog": 0,
+                "unknown": 0
+            },
+            "camera": [
+                {
+                    "type": "sensor",
+                    "shutterCount": 0
+                }
+            ],
+            "photos": [
+                {
+                    "device": "sensor",
+                    "type": "local",
+                    "requested": 0,
+                    "took": 0
+                },
+                {
+                    "device": "sensor",
+                    "type": "remote",
+                    "requested": 0,
+                    "took": 0
+                },
+                {
+                    "device": "dslr",
+                    "type": "local",
+                    "requested": 0,
+                    "took": 0
+                },
+                {
+                    "device": "dslr",
+                    "type": "remote",
+                    "requested": 432,
+                    "took": 432
+                }
+            ],
+            "data": {
+                "dataSent": 38222314,
+                "retries": 0,
+                "retriesDropped": 0
+            },
+            "time": {
+                "awake": 7134,
+                "asleep": 79505,
+                "modem": 1237,
+                "photo": 2689
+            },
+            "bandwidth": {
+                "3GUpload": 0.24
+            }
+        }
+    }
+}
