@@ -1,8 +1,8 @@
-def GetConfigValue(data, field):
-    start_index = data.find(field)
-    if start_index == -1:
-        return None
+with open('stats_example.json', 'r') as stats_json:
+            stats_data = json.load(stats_json)
 
-    start_index += len(field) + 1
-    end_index = data.find("\n", start_index)
-    return data[start_index:end_index].strip()
+stats_table = EnvTestLib.GetStatsTable(stats_data, 'minimax')
+model = EnvTestLib.GetModel(stats_data)
+#pprint(stats_table)
+
+EnvTestLib.CompareConfigToStats(stats_data, config, model)
