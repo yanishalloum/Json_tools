@@ -1,3 +1,11 @@
+#return object associated to a specific name
+    def GetObject(list, fieldName, value):
+        object = []
+        for count, element in enumerate(list):
+            if element[fieldName] == value:
+                object = list[count]
+        return object
+              
 #return model (minimax or mini)
     def GetModel(statJson):
         return next(iter(statJson))   
@@ -57,18 +65,16 @@
     def CompareConfigToStats(statJson, config, model):         
         stats_table = EnvTestLib.GetStatsTable(statJson, model)
         config_table = EnvTestLib.GetConfigTable(config)
-        for i, config_object in enumerate(config_table):
+        for config_object in config_table:
             config_object_name = config_object[0]
             config_object_value = config_object[1]
-            for j, stats_object in enumerate(stats_table):
+            for stats_object in stats_table:
                 stats_object_name = stats_object[0]
                 stats_object_value = stats_object[1]
                 if (config_object_name == stats_object_name):
                     if (str(config_object_value).lower() != str(stats_object_value).lower()):
                         print(stats_object_name + " non conforme")
                     assert(str(config_object_value).lower() == str(stats_object_value).lower())  
-                    config_table.pop(i)
-                    stats_table.pop(j) 
                     break
                         
 #return value associated to a specific name from config file        
@@ -79,3 +85,6 @@
         start_index += len(name) + 1
         end_index = config_data.find("\n", start_index)
         return config_data[start_index+1:end_index].strip() 
+
+#check if label and id are not undefined
+    #def CheckNotUndefined() 
