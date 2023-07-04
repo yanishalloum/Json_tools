@@ -1,3 +1,4 @@
+#return model (minimax or mini)
     def GetModel(statJson):
         return next(iter(statJson))   
 
@@ -11,17 +12,17 @@
     def GetStatsTable(statJson, model):
         possible_box_name = ['mini']#à remplir
         stats_table = []
-        stats_table.append(['boxType'.lower(), statJson[model]['boxType']])
-        stats_table.append(['coreVersion'.lower(), statJson[model]['coreVersion']])   
+        stats_table.append(['boxType'.lower(), str(statJson[model]['boxType']).lower()])
+        stats_table.append(['coreVersion'.lower(), str(statJson[model]['coreVersion']).lower()])   
         for hardware in statJson[model]['hardware']:
             for object in statJson[model]['hardware'][hardware]:
                 if type(object) == str:
                     field_name = f"hardware_{hardware}_{object}".lower()
-                    field_value = statJson[model]['hardware'][hardware][object]
+                    field_value = str(statJson[model]['hardware'][hardware][object]).lower()
                     stats_table.append([field_name, field_value])
                 elif (hardware == 'board'):
                     field_name = f"hardware_{hardware}_{object['name']}".lower()
-                    field_value = object['id']
+                    field_value = str(object['id']).lower()
                     stats_table.append([field_name, field_value])
                 elif (hardware == 'sd'):
                     for field in object:
@@ -29,7 +30,7 @@
                                 field_name = f"hardware_{hardware}_box_{field}".lower() 
                             else:
                                 field_name = f"hardware_{hardware}_camera_{field}".lower()
-                            field_value = object[field]
+                            field_value = str(object[field]).lower()
                             stats_table.append([field_name, field_value])    
 
 
@@ -38,18 +39,24 @@
                 if field != 'name':
                     field_name = f"software_{software['name']}_{field}".lower()
                     field_value = software[field].lower()
-                    stats_table.append([field_name, field_value])
+                else:
+                    field_name = f"software_{software[field]}_name" 
+                    field_value = software[field].lower() 
+                stats_table.append([field_name, field_value])
         return stats_table
               
-
-#compare the fields from config file to stats file    
-    def CompareConfigToStats(statJson, config, model):         
-        stats_table = EnvTestLib.GetStatsTable(statJson, model)
+    def GetConfigTable(config):
         config_table = []
         for config_field in config['validation']:
             field_name = config_field.lower()
-            field_value = config['validation'][config_field]
+            field_value = str(config['validation'][config_field]).lower()
             config_table.append([field_name, field_value])
+        return config_table
+    
+#compare the fields from config file to stats file    
+    def CompareConfigToStats(statJson, config, model):         
+        stats_table = EnvTestLib.GetStatsTable(statJson, model)
+        config_table = EnvTestLib.GetConfigTable(config)
         for i, config_object in enumerate(config_table):
             config_object_name = config_object[0]
             config_object_value = config_object[1]
