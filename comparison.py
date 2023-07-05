@@ -21,11 +21,9 @@ def JsonToList(json_branch):
 stats_list = []
 with open("stats_example.json") as json_branch:
     json_data = json.load(json_branch)
-    
     stats_dict = JsonToList(json_data)
     for object in stats_dict:
             substring_object = str(object[8:-1]).lower()
             stats_list.append([substring_object, stats_dict[object]])
-    pprint(stats_list)
-
-        
+    #pprint(stats_list)
+    print(type(json_data["minimax"]["hardware"]))
