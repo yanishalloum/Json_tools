@@ -7,8 +7,8 @@
                 object = list[count]
         return object
               
-#return model (minimax or mini)
-    def GetModel(statJson):
+#return first element (minimax or mini)
+    def GetFirstElement(statJson):
         return next(iter(statJson))   
 
 #return true if date format is correct
